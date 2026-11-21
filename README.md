@@ -8,7 +8,7 @@ Unlocks some camera features via memory patching and hooking, temp root friendly
 | **S918B**XXSAFZI1 | ✅ Working 12-bit, 60fps main, iDCG and DSG |
 | S23 (base) / S23+ | ❌ Different main sensor, ultrawide untested |
 
-If you've tried it on your S23 device, [create an issue](https://github.com/imAETHER/S23U-12bit-RAW-temproot/issues/new) to let me know how it went! I'd like to support all the S23 versions.
+If you've tried it on your S23 device, [create an issue](https://github.com/imAETHER/S23U-12bit-RAW-temproot/issues/new?template=general_report.yml) to let me know how it went! I'd like to support all the S23 versions.
 
 ## Setup:
 Download both [`mc_repatch.sh`](https://github.com/imAETHER/S23U-12bit-RAW-temproot/blob/main/mc_repatch.sh) and [`cs_final.js`](https://github.com/imAETHER/S23U-12bit-RAW-temproot/blob/main/cs_final.js) from this repo.
@@ -50,7 +50,7 @@ Keep the script running! you can use `termux-wake-lock` and click the notificati
 </details>
 
 Otherwise, everything should be up and working!
-I haven't tested this with other RAW camera apps so let me know if it works in others by [creating an issue](https://github.com/imAETHER/S23U-12bit-RAW-temproot/issues/new)
+I haven't tested this with other RAW camera apps so let me know if it works in others by [creating an issue](https://github.com/imAETHER/S23U-12bit-RAW-temproot/issues/new?template=general_report.yml)
 
 ## Stopping it:
 Do <kbd>Ctrl</kbd>+<kbd>C</kbd> then run this command (as root):\
