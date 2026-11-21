@@ -1,0 +1,42 @@
+name: General Report
+description: Bugs or compatibility test results
+title: "<device model>"
+body:
+  - type: input
+    id: build
+    attributes:
+      label: Build number
+      description: Settings > About phone > Software information > Build number (the part after the last dot, e.g. S918BXXSAFZI1)
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Result
+      options:
+        - Works
+        - Works with minor issues
+        - Script refused to patch (firmware)
+        - Broken / Unusable
+    validations:
+      required: true
+  - type: checkboxes
+    id: tested
+    attributes:
+      label: What did you test? (specify in desc. if none)
+      options:
+        - label: Main (23mm), 30fps
+        - label: Main (23mm), 60fps
+        - label: Ultrawide (14mm)
+        - label: Switching between 14mm and 23mm
+  - type: textarea
+    id: output
+    attributes:
+      label: Script output
+      description: Paste what was printed in the terminal
+      render: shell
+  - type: textarea
+    id: desc
+    attributes:
+      label: Description
+      description: How it happened, steps to reproduce or anything you feel necessary to add
