@@ -6,18 +6,18 @@
 const HOOKS = [
   {
     name: "getCameraCharacteristics",
-    offset: 0x17a418,
-    expected: "5f2403d5c20900b4",
+    offsets: [0x17a418, 0x17f348],
+    expected: "5f2403d5c20900b43f2303d5ff0302d1",
   },
   {
     name: "getPhysicalCameraCharacteristics",
-    offset: 0x17a5e0,
-    expected: "3f2303d5fd7bbda9",
+    offsets: [0x17a5e0, 0x17f510],
+    expected: "3f2303d5fd7bbda9f50b00f9f44f02a9",
   },
   {
     name: "roundBufferDimensionNearest",
-    offset: 0x308024,
-    expected: "3f2303d5ff4302d1",
+    offsets: [0x308024, 0x31f280],
+    expected: "3f2303d5ff4302d1fd7b03a9fc6f04a9",
   },
 ];
 
@@ -163,13 +163,13 @@ function toHex(ptr, length) {
 function setHook(name, callbacks) {
   const entry = HOOKS.find((h) => h.name === name);
 
-  const target = Process.mainModule.base.add(entry.offset);
-  const found = toHex(target, entry.expected.length / 2);
+  const bytes = entry.expected.length / 2;
+  const target = entry.offsets
+    .map((offset) => Process.mainModule.base.add(offset))
+    .find((address) => toHex(address, bytes) === entry.expected);
 
-  if (found !== entry.expected) {
-    console.log(
-      `[cameraserver-hook] ${name}: expected ${entry.expected}, found ${found}. skipping!`,
-    );
+  if (!target) {
+    console.log(`[cameraserver-hook] no target match found. skipping!`);
     return false;
   }
 
