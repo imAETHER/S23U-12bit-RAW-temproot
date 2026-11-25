@@ -5,7 +5,8 @@ Unlocks some camera features via memory patching and hooking, temp root friendly
 **Tested on:**
 |Device (build number) | Status|
 |----|----|
-| **S918B**XXSAFZI1 | ✅ Working 12-bit, 60fps main, iDCG and DSG |
+| **S918B**XXSAFZI1 (OneUI 8.5) | ✅ Working 12-bit, 60fps main, iDCG and DSG |
+| **S918B**XXUAGZIF (OneUI 9) | ✅ Same as above |
 | S23 (base) / S23+ | ❌ Different main sensor, ultrawide untested |
 
 If you've tried it on your S23 device, [create an issue](https://github.com/imAETHER/S23U-12bit-RAW-temproot/issues/new?template=general_report.yml) to let me know how it went! I'd like to support all the S23 versions.
